@@ -6,7 +6,7 @@ public class PersonaTest {
 
     @Test
     public void testPersona() {
-        Persona persona = new Persona("Johna", 25);
-        assertEquals("Johna", persona.getNombre());
+        Persona persona = new Persona("Norly", 25);
+        assertEquals("Norly", persona.getNombre());
     }
 }

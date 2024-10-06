@@ -20,20 +20,4 @@ jobs:
           distribution: 'zulu'      # Distribución de Azul Zulu JDK
 
       - name: Build and test with Maven
-        run: mvn clean verify || true  # Permitir que el paso continúe aunque falle
-
-      - name: Fail PR if coverage is not 100%
-        run: |
-          # Verificar si el archivo jacoco.xml existe
-          if [ ! -f target/site/jacoco/jacoco.xml ]; then
-            echo "JaCoCo report not found!" >&2
-            exit 1
-          fi
-
-          # Comprobar si hay reglas violadas
-          if grep -q 'Rule violated for bundle' target/site/jacoco/jacoco.xml; then
-            echo "Coverage is below 100%!" >&2
-            exit 1
-          else
-            echo "All tests passed and coverage is 100%!"
-          fi
+        run: mvn clean verify

@@ -10,7 +10,7 @@ public class PersonaTest {
         assertEquals("Norly", persona.getNombre());
     }
     @Test
-    public void testSueldo() {
+    public void testSaldo() {
         Persona persona = new Persona("Norly", 1450);
         assertEquals(1450, persona.getSaldo());
     }

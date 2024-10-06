@@ -64,8 +64,8 @@
                                     <limits>
                                         <limit>
                                             <counter>INSTRUCTION</counter>
-                                            <value>COVERED RATIO</value>
-                                            <minimum>1.0</minimum>
+                                            <value>COVEREDRATIO</value> <!-- Cambiar a COVEREDRATIO sin espacio -->
+                                            <minimum>1.0</minimum> <!-- Esto significa 100% -->
                                         </limit>
                                     </limits>
                                 </rule>

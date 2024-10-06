@@ -35,19 +35,16 @@
 
     <build>
         <plugins>
-            <!-- JaCoCo Plugin -->
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.8</version> <!-- Verifica la última versión en el sitio de JaCoCo -->
+                <version>0.8.8</version>
                 <executions>
-                    <!-- Configuración para ejecutar JaCoCo antes de los tests -->
                     <execution>
                         <goals>
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-                    <!-- Configuración para generar el reporte de cobertura después de los tests -->
                     <execution>
                         <id>report</id>
                         <phase>verify</phase>
@@ -55,8 +52,29 @@
                             <goal>report</goal>
                         </goals>
                     </execution>
+                    <execution>
+                        <id>check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>INSTRUCTION</counter>
+                                            <value>COVERED RATIO</value>
+                                            <minimum>1.0</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
+
 </project>

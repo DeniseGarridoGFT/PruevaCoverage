@@ -20,11 +20,11 @@ jobs:
           distribution: 'zulu'      # Distribución de Azul Zulu JDK
 
       - name: Build and test with Maven
-        run: mvn clean verify || true  # Permitir que el script continúe aunque falle
+        run: |
+          mvn clean verify || echo "Maven build failed but continuing..."
 
       - name: Check coverage report
         run: |
-          # Verificar si el informe de JaCoCo indica cobertura menor al 100%
           if grep -q 'Rule violated for bundle' target/site/jacoco/jacoco.xml; then
             echo "Coverage is below 100%!" >&2
             exit 1

@@ -9,4 +9,9 @@ public class PersonaTest {
         Persona persona = new Persona("Norly", 1450);
         assertEquals("Norly", persona.getNombre());
     }
+    @Test
+    public void testSueldo() {
+        Persona persona = new Persona("Norly", 1450);
+        assertEquals(1450, persona.getSaldo());
+    }
 }

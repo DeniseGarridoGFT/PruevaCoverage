@@ -57,6 +57,9 @@
                             <goal>check</goal>
                         </goals>
                         <configuration>
+                            <excludes>
+                                <exclude>org/example/Main.class</exclude> <!-- Ignorar la clase Main -->
+                            </excludes>
                             <rules>
                                 <rule>
                                     <element>BUNDLE</element>

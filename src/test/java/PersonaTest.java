@@ -6,12 +6,12 @@ public class PersonaTest {
 
     @Test
     public void testPersona() {
-        Persona persona = new Persona("Norly", 1450);
+        Persona persona = new Persona("Norly", 1400);
         assertEquals("Norly", persona.getNombre());
     }
     @Test
     public void testSaldo() {
-        Persona persona = new Persona("Norly", 1450);
+        Persona persona = new Persona("Norly", 1400);
         assertEquals(1450, persona.getSaldo());
     }
 }
